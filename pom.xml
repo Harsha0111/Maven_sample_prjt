@@ -8,6 +8,7 @@
     <artifactId>Maven_hello-world</artifactId>
     <version>0.0.0</version>
     <name>Maven_Hello</name>
+    <packaging>war</packaging>
          
 
     <properties>
