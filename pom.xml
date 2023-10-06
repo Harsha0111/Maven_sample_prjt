@@ -7,6 +7,8 @@
     <groupId>org.springbootdemo</groupId>
     <artifactId>Maven_hello-world</artifactId>
     <version>0.0.0</version>
+    <name>Maven_Hello</name>
+         
 
     <properties>
          <maven.compiler.source>17</maven.compiler.source>
