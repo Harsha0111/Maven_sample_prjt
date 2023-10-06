@@ -27,6 +27,21 @@
                 <artifactId>sonar-maven-plugin</artifactId>
                 <version>3.11.0.1802</version> <!-- Use the latest version -->
             </plugin>
+
+           <!-- Maven plugin to generate the war when compiling       -->
+           <plugin>
+             <artifactId>maven-war-plugin</artifactId>
+             <configuration>
+                 <attachClasses>true</attachClasses>
+                 <webXml>target/web.xml</webXml>
+                 <webResources>
+                     <resource>
+                         <directory>src/main/webapp</directory>
+                         <filtering>true</filtering>
+                     </resource>
+                 </webResources>
+             </configuration>
+         </plugin>
         </plugins>
     </build>
     
