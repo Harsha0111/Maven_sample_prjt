@@ -27,13 +27,7 @@
                 <artifactId>sonar-maven-plugin</artifactId>
                 <version>3.11.0.1802</version> <!-- Use the latest version -->
             </plugin>
-             <!-- Maven plugin to deploy JAR to Nexus -->
-               <!-- Maven plugin to deploy JAR to Nexus -->
-               <plugin>
-                  <groupId>org.apache.maven.plugins</groupId>
-                  <artifactId>maven-deploy-plugin</artifactId>
-                  <version>3.8.6</version>
-               </plugin>
+             
 
           
     
