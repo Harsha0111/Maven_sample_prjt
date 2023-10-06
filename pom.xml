@@ -28,13 +28,33 @@
                 <version>3.11.0.1802</version> <!-- Use the latest version -->
             </plugin>
 
-           <!-- Maven plugin to generate the war when compiling       -->
-          <plugin>
-           <groupId>org.apache.maven.plugins</groupId>
-           <artifactId>maven-war-plugin</artifactId>
-           <version>2.2</version>
-         </plugin>
-        </plugins>
+           <!-- Maven plugin to generate the war when compiling -->
+           <build>
+    <plugins>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-war-plugin</artifactId>
+            <version>2.3</version>
+            <extensions>false</extensions>
+            <configuration>
+                <warName>${project.parent.artifactId}-${project.version}</warName>
+                <failOnMissingWebXml>false</failOnMissingWebXml>
+                <attachClasses>true</attachClasses>
+                <archive>
+                    <manifest>
+                        <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+                    </manifest>
+                    <manifestEntries>
+                        <git-hash>${buildNumber}</git-hash>
+                    </manifestEntries>
+                </archive>
+                <webappDirectory>${project.build.directory}/${project.artifactId}-exploded.${project.packaging}</webappDirectory>
+            </configuration>
+        </plugin>
+    </plugins>
+</build>
+
+          
     </build>
     
 </project>
